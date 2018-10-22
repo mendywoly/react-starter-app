@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import {Route, Switch, Redirect } from 'react-router-dom'
+import {Route, Switch } from 'react-router-dom'
 import { withRouter } from 'react-router-dom';
 import Adapter from './components/Adapter'
 import LogInForm from './components/LogInForm'
@@ -23,13 +23,9 @@ class App extends Component {
         <Switch>
           <Route exact path="/login" component={LogInForm}/>
           <Route exact path="/signup" component={SignUpForm}/>
-          {/* {Adapter.isLoggedIn() ?     */}
           <React.Fragment>
-            {/* <Route exact path="/" component={HomeContainer}/> */}
             <PrivateRoute exact path="/" component={HomeContainer}/>
-
           </React.Fragment>
-          {/* : <Redirect to="/login" /> } */}
         </ Switch>
       </div>
     );

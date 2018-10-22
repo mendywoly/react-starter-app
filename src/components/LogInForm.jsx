@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Form, Grid } from 'semantic-ui-react'
-import { Route, Link, Redirect } from 'react-router-dom'
 import { withRouter } from 'react-router-dom';
 import {setCurrentUser} from '../action'
 import {connect} from 'react-redux'
@@ -43,7 +42,6 @@ class LogInForm extends Component {
     render() {
 
         const { userName, password  } = this.state
-        const isLoggedIn = Adapter.isLoggedIn() 
         return (        
 
             <div>

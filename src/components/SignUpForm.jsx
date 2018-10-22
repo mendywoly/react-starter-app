@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Grid } from 'semantic-ui-react'
 import Adapter from './Adapter'
-import { Link } from 'react-router-dom'
 import {connect} from 'react-redux'
 import {setCurrentUser} from '../action'
 
@@ -23,7 +22,7 @@ class SignUpForm extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        const {firstName, lastName, userName, password, companyName, passwordConfirmation } = this.state
+        const {firstName, lastName, userName, password, companyName } = this.state
 
         Adapter.signUp(firstName, lastName, userName, password, companyName)
         .then( r=> this.handleErrors(r))
