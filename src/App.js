@@ -8,6 +8,7 @@ import SignUpForm from './components/SignUpForm'
 import {connect} from 'react-redux'
 import {setCurrentUser} from './action'
 import HomeContainer from './containers/HomeContainer'
+import PrivateRoute from './components/Auth/PrivateRoute'
 
 class App extends Component {
   
@@ -22,11 +23,13 @@ class App extends Component {
         <Switch>
           <Route exact path="/login" component={LogInForm}/>
           <Route exact path="/signup" component={SignUpForm}/>
-          {Adapter.isLoggedIn() ?    
+          {/* {Adapter.isLoggedIn() ?     */}
           <React.Fragment>
-            <Route exact path="/" component={HomeContainer}/>
+            {/* <Route exact path="/" component={HomeContainer}/> */}
+            <PrivateRoute exact path="/" component={HomeContainer}/>
+
           </React.Fragment>
-          : <Redirect to="/login" /> }
+          {/* : <Redirect to="/login" /> } */}
         </ Switch>
       </div>
     );
